@@ -13,6 +13,9 @@
 		A12A46E11DAD3AB9003547FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12A46E01DAD3AB9003547FC /* Assets.xcassets */; };
 		A12A46E41DAD3AB9003547FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12A46E21DAD3AB9003547FC /* LaunchScreen.storyboard */; };
 		A12A46EF1DAD3AB9003547FC /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A46EE1DAD3AB9003547FC /* FoodTrackerTests.swift */; };
+		A1BD78421DE0F51900AAAB81 /* Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD78411DE0F51900AAAB81 /* Measurements.swift */; };
+		A1BD78431DE0F52800AAAB81 /* Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD78411DE0F51900AAAB81 /* Measurements.swift */; };
+		A1BD78441DE0FECD00AAAB81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12A46DB1DAD3AB9003547FC /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 		A12A46EA1DAD3AB9003547FC /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12A46EE1DAD3AB9003547FC /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		A12A46F01DAD3AB9003547FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BD78411DE0F51900AAAB81 /* Measurements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measurements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				A12A46D91DAD3AB9003547FC /* AppDelegate.swift */,
 				A12A46DB1DAD3AB9003547FC /* ViewController.swift */,
 				A12A46DD1DAD3AB9003547FC /* Main.storyboard */,
+				A1BD78411DE0F51900AAAB81 /* Measurements.swift */,
 				A12A46E01DAD3AB9003547FC /* Assets.xcassets */,
 				A12A46E21DAD3AB9003547FC /* LaunchScreen.storyboard */,
 				A12A46E51DAD3AB9003547FC /* Info.plist */,
@@ -141,7 +146,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Emily;
 				TargetAttributes = {
 					A12A46D51DAD3AB9003547FC = {
@@ -200,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12A46DC1DAD3AB9003547FC /* ViewController.swift in Sources */,
+				A1BD78421DE0F51900AAAB81 /* Measurements.swift in Sources */,
 				A12A46DA1DAD3AB9003547FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BD78441DE0FECD00AAAB81 /* ViewController.swift in Sources */,
+				A1BD78431DE0F52800AAAB81 /* Measurements.swift in Sources */,
 				A12A46EF1DAD3AB9003547FC /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -310,6 +319,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -406,6 +416,7 @@
 				A12A46F51DAD3AB9003547FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A12A46F61DAD3AB9003547FC /* Build configuration list for PBXNativeTarget "FoodTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +425,7 @@
 				A12A46F81DAD3AB9003547FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
