@@ -13,14 +13,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
-    @IBOutlet weak var headerLabel: UINavigationBar!
+    //@IBOutlet weak var headerLabel: UINavigationBar!
+    @IBOutlet weak var navigationHeader: UIBarButtonItem!
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         // Handle the text field's user input through delegate callbacks.
-        nameTextField.delegate = self
+        // Might need this again later? But for now just breaks stuff
+        //nameTextField.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -85,6 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(measurements, toFile: Measurements.ArchiveURL.path)
         if !isSuccessfulSave { print("Failed to save") }
         else { print("Saved!") }
+        self.performSegue(withIdentifier: "segueOne", sender: self)
     }
     
     func loadMeasurements() -> [Measurements]? {
