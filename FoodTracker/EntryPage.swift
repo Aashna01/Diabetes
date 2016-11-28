@@ -8,7 +8,11 @@
 
 import UIKit
 
+// MARK: The Phone Number.
+var phoneNumber: String = "XXXXXXXXXX"
+
 class EntryPage: UIViewController {
+    
     
     // MARK: Properties
     @IBOutlet weak var welcomeText: UILabel!
@@ -47,6 +51,7 @@ class EntryPage: UIViewController {
                 return false
             }
         }
+        phoneNumber = cellField.text!
         return true
     }
 }
