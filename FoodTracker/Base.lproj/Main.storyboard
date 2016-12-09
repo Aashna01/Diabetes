@@ -114,11 +114,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Day 1 - Lunch" id="1vG-vy-Ofr"/>
+                    <navigationItem key="navigationItem" title="Day 1 - Lunch" id="1vG-vy-Ofr">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="5aK-xd-4bG">
+                            <connections>
+                                <segue destination="lj9-QE-WIc" kind="show" id="9ea-EV-o6L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bX3-ze-lQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="-27"/>
+        </scene>
+        <!--Send Email Page-->
+        <scene sceneID="zwy-Ha-egq">
+            <objects>
+                <viewController id="lj9-QE-WIc" customClass="SendEmailPage" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vHl-da-mTj"/>
+                        <viewControllerLayoutGuide type="bottom" id="dSS-1A-ZN7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DUq-U8-q1l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-Oy-tDD">
+                                <rect key="frame" x="77" y="249" width="220" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.07599552720785141" green="0.80379420518875122" blue="0.072829939424991608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Send Email To Doctor"/>
+                                <connections>
+                                    <action selector="sendEmailButtonTapped:" destination="lj9-QE-WIc" eventType="touchUpInside" id="Srx-g8-KCq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="sendEmailButton" destination="hkh-Oy-tDD" id="iU2-2L-y1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kq-fH-XsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-27.436281859070466"/>
         </scene>
         <!--Entry Page-->
         <scene sceneID="GH6-AR-ehy">
@@ -180,7 +219,6 @@
         <!--Navigation Controller-->
         <scene sceneID="7nG-z9-kFl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1xC-dZ-FO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WqC-Vj-XdZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gdg-v1-3vS">
@@ -192,6 +230,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a7Y-0Y-p0V"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xC-dZ-FO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1647.2" y="-26.53673163418291"/>
         </scene>
