@@ -130,11 +130,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-BA-lx0">
                                 <rect key="frame" x="60" y="422" width="240" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96972829103469849" green="0.78173291683197021" blue="0.027563830837607384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99739283323287964" green="0.49869334697723389" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Let's Get Started!"/>
+                                <state key="normal" title="Let's Get Started!">
+                                    <color key="titleShadowColor" red="0.07599552720785141" green="0.80379420518875122" blue="0.072829939424991608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="WqC-Vj-XdZ" kind="show" identifier="entrySegue" id="CDI-tc-JBj"/>
+                                    <segue destination="cCj-x9-3FF" kind="show" identifier="entrySegue" id="t9T-Kw-SOY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome! To begin, please enter your cell number here. No punctuation, please!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-oI-ecU">
@@ -156,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaH-7Q-e63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2552.8000000000002" y="-26.53673163418291"/>
+            <point key="canvasLocation" x="-2548" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7nG-z9-kFl">
@@ -175,6 +177,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xC-dZ-FO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1647.2" y="-26.53673163418291"/>
+        </scene>
+        <!--Enter Bedtime-->
+        <scene sceneID="noa-XW-B8v">
+            <objects>
+                <viewController id="cCj-x9-3FF" customClass="EnterBedtime" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="75R-d1-cxF"/>
+                        <viewControllerLayoutGuide type="bottom" id="jVQ-X8-5AH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ptT-tG-5Yj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RzI-er-pP5">
+                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="503359253.512043">
+                                    <!--2016-12-13 22:00:53 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We will remind you to enter your measurements around bedtime! Please enter your bedtime here:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNG-Ip-ZEe">
+                                <rect key="frame" x="48" y="83" width="279" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-GZ-zU4">
+                                <rect key="frame" x="103" y="490" width="169" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.07599552720785141" green="0.80379420518875122" blue="0.072829939424991608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="saveDate:" destination="cCj-x9-3FF" eventType="touchUpInside" id="1za-bL-RNv"/>
+                                    <segue destination="WqC-Vj-XdZ" kind="show" id="jdw-3y-wg7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bedtimeButton" destination="P1Z-GZ-zU4" id="0DQ-Dw-0DX"/>
+                        <outlet property="bedtimeText" destination="mNG-Ip-ZEe" id="UQQ-7t-lyj"/>
+                        <outlet property="bedtimeWheel" destination="RzI-er-pP5" id="dWi-cG-KKR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXH-xM-zZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1968.8" y="720.08995502248877"/>
         </scene>
         <!--Day 1 - After Breakfast-->
         <scene sceneID="l6M-WO-qz8">

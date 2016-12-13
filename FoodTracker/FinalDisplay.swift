@@ -51,13 +51,12 @@ class FinalDisplay: UIViewController {
             if glucose == nil {
                 greyLines.append([charCount,lineCharCount])
             }
-            else if Int(glucose!)! > 200 {
+            else if Int(glucose!)! > 185 {
                 redLines.append([charCount,lineCharCount])
             }
             finalString = finalString+"\n"+tempString
             charCount = charCount+lineCharCount
         }
-        //return "String\nString!"
  
         let myString = NSMutableAttributedString( string: finalString )
         

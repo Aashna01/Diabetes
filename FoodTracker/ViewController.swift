@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if !isSuccessfulSave {
             print("Failed to save")
-            let failAlertController = UIAlertController(title: "Invalid Glucose Value", message: "Please enter an integer between 20 and 400.", preferredStyle: UIAlertControllerStyle.alert)
+            let failAlertController = UIAlertController(title: "Invalid Glucose Value", message: "Please enter an integer between 20 and 700.", preferredStyle: UIAlertControllerStyle.alert)
             failAlertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel,handler: nil))
             self.present(failAlertController, animated:true, completion:nil)
         }
@@ -110,7 +110,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // earlier in the process, but...eh.
     func isValidGlucose(gluc:String)->Bool{
         if let firstTest = Int(gluc) {
-            if firstTest < 400 && firstTest > 20 {return(true)}
+            if firstTest < 700 && firstTest > 20 {return(true)}
         }
         return(false)
     }
