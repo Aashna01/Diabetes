@@ -12,11 +12,15 @@ class FinalDisplay: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var textDisplay: UILabel!
+    let MealNameKey = [ 1: "Day 1 - Before Breakfast",
+                        2: "Day 1 - After Breakfast",
+                        3: "Day 1 - Before Lunch",
+                        4: "Day 1 - After Lunch"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let textDisplayText: String = makeDisplayText()
-        textDisplay.text = textDisplayText
+        let textDisplayText: NSMutableAttributedString = makeDisplayText()
+        textDisplay.attributedText = textDisplayText
         // Do any additional setup after loading the view.
     }
 
@@ -26,22 +30,53 @@ class FinalDisplay: UIViewController {
     }
     
     // MARK: Make text for display.
-    func makeDisplayText() -> String {
+    func makeDisplayText() -> NSMutableAttributedString {
         var finalString: String = ""
-        for i in glucoseTimes.keys {
-            //let glucose = glucoseEntries[i]
+        var greyLines: [[Int]] = []
+        var redLines: [[Int]] = []
+        var charCount: Int = 0
+        let sortedKeys = glucoseTimes.keys.sorted()
+        for i in sortedKeys {
+            var tempString: String = ""
+            let glucose = glucoseEntries[i]
             let cal = glucoseTimes[i]
             let dateTime = formatDateTime(dt: cal!)
-            finalString = finalString+"\n"+dateTime
+            if glucose != nil {
+                tempString = tempString+"\(MealNameKey[i]!)\t\(dateTime)\t\(glucose!)"
+            }
+            else {
+                tempString = tempString+"\(MealNameKey[i]!)\t\(dateTime)\tSkipped"
+            }
+            let lineCharCount = tempString.characters.count+1
+            if glucose == nil {
+                greyLines.append([charCount,lineCharCount])
+            }
+            else if Int(glucose!)! > 200 {
+                redLines.append([charCount,lineCharCount])
+            }
+            finalString = finalString+"\n"+tempString
+            charCount = charCount+lineCharCount
         }
         //return "String\nString!"
-        return finalString
+ 
+        let myString = NSMutableAttributedString( string: finalString )
+        
+        for item in greyLines {
+            myString.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray, range: NSRange(location:item[0], length:item[1]))
+        }
+        
+        for item in redLines {
+            myString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:item[0], length:item[1]))
+        }
+        
+        return myString
     }
     
     func formatDateTime(dt: Date) -> String{
         let calendar = Calendar.current
         let second = String(format: "%02d", calendar.component(.second, from: dt))
-        let hour = String(format: "%02d", calendar.component(.hour, from: dt)%12)
+        //let hour = String(format: "%02d", calendar.component(.hour, from: dt)%12)
+        let hour = String(format: "%02d", calendar.component(.hour, from: dt))
         let minute = String(format: "%02d", calendar.component(.minute, from: dt))
         return("\(hour):\(minute):\(second)")
     }
