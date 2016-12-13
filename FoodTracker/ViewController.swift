@@ -59,6 +59,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func saveSkippedMeasurement(){
         print("Skipping...")
+        glucoseEntries[mealNumber] = nil
+        glucoseTimes[mealNumber] = Date()
+        mealNumber = mealNumber+1
+        self.performSegue(withIdentifier: "segueOne", sender: self)
     }
     
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
@@ -72,25 +76,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func saveMeasurement(){
         print("Saving...")
-        let date = Date()
-        let calendar = Calendar.current
-        let second = String(format: "%02d", calendar.component(.second, from: date))
-        let hour = String(format: "%02d", calendar.component(.hour, from: date)%12)
-        let minute = String(format: "%02d", calendar.component(.minute, from: date))
-        nameTextField.text = "\(hour):\(minute):\(second)"
+        let calendar = Date()
         
-        let measurements = Measurements(day: 1, meal: 1, dateTime: calendar, glucose: 200)
-        saveMeasurements(measurements: measurements!)
+        //let measurements = Measurements(day: 1, meal: 1, dateTime: calendar, glucose: 200)
+        //saveMeasurements(measurements: measurements!)
+
+        saveMeasurements(dateTime: calendar, glucose: nameTextField.text!)
     }
 
     // MARK: NSCoding
-    func saveMeasurements(measurements: Measurements){
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(measurements, toFile: Measurements.ArchiveURL.path)
-        if !isSuccessfulSave { print("Failed to save") }
-        else { print("Saved!") }
+    //func saveMeasurements(measurements: Measurements){
+    func saveMeasurements(dateTime: Date, glucose: String){
+        let isSuccessfulSave = isValidGlucose(gluc: glucose)
+        
+        if !isSuccessfulSave {
+            print("Failed to save")
+            let failAlertController = UIAlertController(title: "Invalid Glucose Value", message: "Please enter an integer between 20 and 400.", preferredStyle: UIAlertControllerStyle.alert)
+            failAlertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel,handler: nil))
+            self.present(failAlertController, animated:true, completion:nil)
+        }
+            
+        else {
+        print("Saved!")
+        glucoseEntries[mealNumber] = glucose
+        glucoseTimes[mealNumber] = dateTime
+        mealNumber = mealNumber+1
         self.performSegue(withIdentifier: "segueOne", sender: self)
+        }
     }
     
+    // MARK: check if glucose value is valid
+    // Probably should perform this check a bit
+    // earlier in the process, but...eh.
+    func isValidGlucose(gluc:String)->Bool{
+        if let firstTest = Int(gluc) {
+            if firstTest < 400 && firstTest > 20 {return(true)}
+        }
+        return(false)
+    }
+    
+    // This probably doesn't get used anymore
     func loadMeasurements() -> [Measurements]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Measurements.ArchiveURL.path) as? [Measurements]
     }

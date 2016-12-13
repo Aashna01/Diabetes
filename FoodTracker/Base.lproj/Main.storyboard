@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Day 1 - Breakfast-->
+        <!--Day 1 - Before Breakfast-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="FirstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,15 +78,16 @@
                                 <connections>
                                     <action selector="forgotButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tge-KS-YXh"/>
                                     <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLU-St-kpR"/>
+                                    <segue destination="hSA-1b-qrn" kind="show" identifier="segueOne" id="RFg-87-iFm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Day 1 - Breakfast" id="RUP-Jo-5Du">
+                    <navigationItem key="navigationItem" title="Day 1 - Before Breakfast" id="RUP-Jo-5Du">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="nmv-Or-V5c">
                             <connections>
-                                <segue destination="cbl-Di-t17" kind="show" id="bUe-GA-y8K"/>
+                                <segue destination="hSA-1b-qrn" kind="show" identifier="segueOneB" id="jXK-1O-Kqt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,70 +95,11 @@
                         <outlet property="mealNameLabel" destination="U4K-34-otD" id="CO6-CW-uYF"/>
                         <outlet property="nameTextField" destination="SLI-HS-psN" id="IRp-MW-2h4"/>
                         <outlet property="navigationHeader" destination="nmv-Or-V5c" id="dmN-xS-LcO"/>
-                        <segue destination="cbl-Di-t17" kind="show" identifier="segueOne" id="1eL-Wq-gbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-540" y="-27"/>
-        </scene>
-        <!--Day 1 - Lunch-->
-        <scene sceneID="m8j-Sm-fld">
-            <objects>
-                <viewController storyboardIdentifier="SecondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbl-Di-t17" customClass="ViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TEH-X8-NGS"/>
-                        <viewControllerLayoutGuide type="bottom" id="J3O-3H-e0O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nhO-W0-Tiy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Day 1 - Lunch" id="1vG-vy-Ofr">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5aK-xd-4bG">
-                            <connections>
-                                <segue destination="lj9-QE-WIc" kind="show" id="9ea-EV-o6L"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bX3-ze-lQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="138" y="-27"/>
-        </scene>
-        <!--Send Email Page-->
-        <scene sceneID="zwy-Ha-egq">
-            <objects>
-                <viewController id="lj9-QE-WIc" customClass="SendEmailPage" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vHl-da-mTj"/>
-                        <viewControllerLayoutGuide type="bottom" id="dSS-1A-ZN7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DUq-U8-q1l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-Oy-tDD">
-                                <rect key="frame" x="77" y="249" width="220" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.07599552720785141" green="0.80379420518875122" blue="0.072829939424991608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Send Email To Doctor"/>
-                                <connections>
-                                    <action selector="sendEmailButtonTapped:" destination="lj9-QE-WIc" eventType="touchUpInside" id="Srx-g8-KCq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="sendEmailButton" destination="hkh-Oy-tDD" id="iU2-2L-y1W"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kq-fH-XsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="908" y="-27.436281859070466"/>
         </scene>
         <!--Entry Page-->
         <scene sceneID="GH6-AR-ehy">
@@ -219,7 +161,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7nG-z9-kFl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WqC-Vj-XdZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="WqC-Vj-XdZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gdg-v1-3vS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -234,8 +176,302 @@
             </objects>
             <point key="canvasLocation" x="-1647.2" y="-26.53673163418291"/>
         </scene>
+        <!--Day 1 - After Breakfast-->
+        <scene sceneID="l6M-WO-qz8">
+            <objects>
+                <viewController storyboardIdentifier="SecondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hSA-1b-qrn" customClass="ViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bwp-FO-Q7n"/>
+                        <viewControllerLayoutGuide type="bottom" id="jWF-vv-ug6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hK3-cB-rAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 200..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-rc-UFR">
+                                <rect key="frame" x="68" y="223" width="228.00000000000006" height="29.999999999999993"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Your Glucose Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiT-YO-paq">
+                                <rect key="frame" x="68" y="194" width="220" height="20.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sym-7A-8e2">
+                                <rect key="frame" x="68" y="463" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98035269979999995" green="0.60263127090000002" blue="0.02150060795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Enter and Continue">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="setDefaultLabelText:" destination="hSA-1b-qrn" eventType="touchUpInside" id="REK-pb-mTf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Plm-i8-DyV">
+                                <rect key="frame" x="68" y="300" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99739283320000005" green="0.49869334700000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Whoops, I forgot!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="forgotButton:" destination="hSA-1b-qrn" eventType="touchUpInside" id="b1T-VE-ikB"/>
+                                    <action selector="setDefaultLabelText:" destination="hSA-1b-qrn" eventType="touchUpInside" id="ifD-zN-t0h"/>
+                                    <segue destination="aMb-xu-t1r" kind="show" identifier="segueOne" id="Xc7-jJ-I9K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Day 1 - After Breakfast" id="tfP-AJ-9o0">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="h3s-fj-Aun"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="ZiT-YO-paq" id="zCA-wg-B3E"/>
+                        <outlet property="nameTextField" destination="yAU-rc-UFR" id="fgE-x6-dEm"/>
+                        <outlet property="navigationHeader" destination="h3s-fj-Aun" id="Sbk-jW-mgo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0F-PG-Zja" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="-27"/>
+        </scene>
+        <!--Day 1 - Before Lunch-->
+        <scene sceneID="jt2-cD-kf6">
+            <objects>
+                <viewController storyboardIdentifier="ThirdView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aMb-xu-t1r" customClass="ViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="863-AR-HTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="NtX-dc-Oft"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r7M-ZY-Oqv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 200..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9q-Jy-icY">
+                                <rect key="frame" x="68" y="223" width="228.00000000000006" height="29.999999999999993"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Your Glucose Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcK-su-qSj">
+                                <rect key="frame" x="68" y="194" width="220" height="20.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-i1-DBu">
+                                <rect key="frame" x="68" y="463" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98035269979999995" green="0.60263127090000002" blue="0.02150060795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Enter and Continue">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="setDefaultLabelText:" destination="aMb-xu-t1r" eventType="touchUpInside" id="Ugr-YL-B9d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHY-Md-6yh">
+                                <rect key="frame" x="68" y="300" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99739283320000005" green="0.49869334700000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Whoops, I forgot!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="forgotButton:" destination="aMb-xu-t1r" eventType="touchUpInside" id="OGU-cx-pw0"/>
+                                    <action selector="setDefaultLabelText:" destination="aMb-xu-t1r" eventType="touchUpInside" id="B9Z-h4-aB8"/>
+                                    <segue destination="8L8-iJ-ByB" kind="show" identifier="segueOne" id="eDf-Ab-2uJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Day 1 - Before Lunch" id="ErF-wx-bmH">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="LJ8-Wc-eRg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="tcK-su-qSj" id="8AR-uQ-Gfs"/>
+                        <outlet property="nameTextField" destination="B9q-Jy-icY" id="Y2W-X8-hvY"/>
+                        <outlet property="navigationHeader" destination="LJ8-Wc-eRg" id="PZ5-HE-qBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDc-WC-n7l" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385" y="-27"/>
+        </scene>
+        <!--Final Display-->
+        <scene sceneID="hsD-vV-2BA">
+            <objects>
+                <viewController id="VSQ-c0-sKJ" customClass="FinalDisplay" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5R1-Mw-FNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="YC1-32-c1r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0JK-V4-0To">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7U-rj-QHH">
+                                <rect key="frame" x="16" y="162" width="343" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="textDisplay" destination="M7U-rj-QHH" id="oHN-0U-jHL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdp-OF-ZaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2984.8000000000002" y="-27.436281859070466"/>
+        </scene>
+        <!--Day 1 - After Lunch-->
+        <scene sceneID="pfv-zV-X2G">
+            <objects>
+                <viewController storyboardIdentifier="FourthView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8L8-iJ-ByB" customClass="ViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6gc-Yr-lfK"/>
+                        <viewControllerLayoutGuide type="bottom" id="DCl-Gk-Snu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aAZ-k7-doy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 200..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLT-qd-FF6">
+                                <rect key="frame" x="68" y="223" width="228.00000000000006" height="29.999999999999993"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Your Glucose Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIa-Df-TrP">
+                                <rect key="frame" x="68" y="194" width="220" height="20.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7y-Zm-ugE">
+                                <rect key="frame" x="68" y="463" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98035269979999995" green="0.60263127090000002" blue="0.02150060795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Enter and Continue">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="setDefaultLabelText:" destination="8L8-iJ-ByB" eventType="touchUpInside" id="WKO-Ur-mXZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQQ-Db-l5R">
+                                <rect key="frame" x="68" y="300" width="248" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99739283320000005" green="0.49869334700000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Whoops, I forgot!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16193333268165588" green="9.1905669250991195e-05" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" metaFont="system" size="26"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                </variation>
+                                <connections>
+                                    <action selector="forgotButton:" destination="8L8-iJ-ByB" eventType="touchUpInside" id="Z8h-0Z-cDE"/>
+                                    <action selector="setDefaultLabelText:" destination="8L8-iJ-ByB" eventType="touchUpInside" id="jD2-xc-GF3"/>
+                                    <segue destination="VSQ-c0-sKJ" kind="show" identifier="segueOne" id="x2k-w2-pRU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Day 1 - After Lunch" id="wFW-wg-F3C">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="tbt-Fv-dSZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="aIa-Df-TrP" id="eRW-rd-KuA"/>
+                        <outlet property="nameTextField" destination="RLT-qd-FF6" id="CsZ-UN-GQG"/>
+                        <outlet property="navigationHeader" destination="tbt-Fv-dSZ" id="fnY-TY-Pnd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vb-R7-5Xh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2194" y="-27"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1eL-Wq-gbm"/>
+        <segue reference="jXK-1O-Kqt"/>
     </inferredMetricsTieBreakers>
 </document>

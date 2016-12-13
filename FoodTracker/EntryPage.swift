@@ -8,8 +8,11 @@
 
 import UIKit
 
-// MARK: The Phone Number.
+// MARK: The Global Variables.
 var phoneNumber: String = "XXXXXXXXXX"
+var mealNumber: Int = 1
+var glucoseTimes: [Int: Date] = [:]
+var glucoseEntries: [Int: String] = [:]
 
 class EntryPage: UIViewController {
     
